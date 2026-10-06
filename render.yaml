@@ -5,6 +5,7 @@ services:
     env: docker
     region: ohio # Escolha a região de preferência (ex: oregon, ohio, frankfurt)
     plan: free # Ou o plano de sua preferência
+    rootDir: server
     dockerfilePath: ./server/Dockerfile # Ajuste o caminho se necessário
     envVars:
       - key: PORT
@@ -16,6 +17,7 @@ services:
     name: meu-frontend
     env: docker
     region: ohio
+    rootDir: client
     plan: free
     dockerfilePath: ./client/Dockerfile # Ajuste o caminho do seu front
     envVars:
