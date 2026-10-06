@@ -14,7 +14,7 @@ services:
 
   # 2. Serviço de Frontend (Nginx)
   - type: web
-    name: meu-frontend
+    name: RPG_With_Friends
     env: docker
     region: ohio
     plan: free
