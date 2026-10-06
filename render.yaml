@@ -1,26 +1,25 @@
+
 services:
   # 1. Serviço de Backend (API)
   - type: web
     name: minha-api
     env: docker
-    region: ohio # Escolha a região de preferência (ex: oregon, ohio, frankfurt)
-    plan: free # Ou o plano de sua preferência
-    rootDir: server
-    dockerfilePath: ./server/Dockerfile # Ajuste o caminho se necessário
+    region: ohio
+    plan: free
+    rootDir: server # Define a pasta 'server' como a raiz do contexto do Docker
+    dockerfilePath: Dockerfile
     envVars:
       - key: PORT
         value: 3001
-      # Adicione outras variáveis de ambiente da sua API aqui se precisar
 
   # 2. Serviço de Frontend (Nginx)
   - type: web
     name: meu-frontend
     env: docker
     region: ohio
-    rootDir: client
     plan: free
-    dockerfilePath: ./client/Dockerfile # Ajuste o caminho do seu front
+    rootDir: client # Define a pasta 'client' como a raiz do contexto do Docker
+    dockerfilePath: Dockerfile
     envVars:
-      # A Render permite injetar a URL do outro serviço gerada dinamicamente usando a sintaxe abaixo:
       - key: BACKEND_URL
         value: "https://RPG_With_Friends.onrender.com" # Substitua pelo nome do seu serviço de backend
