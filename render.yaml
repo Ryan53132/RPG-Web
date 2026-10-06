@@ -1,0 +1,27 @@
+services:
+  # 1. Serviço de Backend (API)
+  - type: web
+    name: minha-api
+    env: docker
+    region: ohio # Escolha a região de preferência (ex: oregon, ohio, frankfurt)
+    plan: free # Ou o plano de sua preferência
+    dockerfilePath: ./server/Dockerfile # Ajuste o caminho se necessário
+    envVars:
+      - key: PORT
+        value: 3001
+      # Adicione outras variáveis de ambiente da sua API aqui se precisar
+
+  # 2. Serviço de Frontend (Nginx)
+  - type: web
+    name: meu-frontend
+    env: docker
+    region: ohio
+    plan: free
+    dockerfilePath: ./client/Dockerfile # Ajuste o caminho do seu front
+    envVars:
+      # A Render permite injetar a URL do outro serviço gerada dinamicamente usando a sintaxe abaixo:
+      - key: BACKEND_URL
+        fromService:
+          type: web
+          name: minha-api
+          property: url
