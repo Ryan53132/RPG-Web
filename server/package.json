@@ -1,0 +1,16 @@
+{
+  "name": "mesa-rpg-server",
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js",
+    "test": "node test/combate.test.mjs"
+  },
+  "dependencies": {
+    "socket.io": "^4.7.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
