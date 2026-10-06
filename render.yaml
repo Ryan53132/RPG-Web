@@ -22,4 +22,4 @@ services:
     dockerfilePath: Dockerfile
     envVars:
       - key: BACKEND_URL
-        value: "https://minha-api-3za7.onrender.com" # Substitua pelo nome do seu serviço de backend
+        value: "http://minha-api-3za7.onrender.com" # Substitua pelo nome do seu serviço de backend
