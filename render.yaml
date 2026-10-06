@@ -21,7 +21,4 @@ services:
     envVars:
       # A Render permite injetar a URL do outro serviço gerada dinamicamente usando a sintaxe abaixo:
       - key: BACKEND_URL
-        fromService:
-          type: web
-          name: minha-api
-          property: url
+        value: "https://RPG_With_Friends.onrender.com" # Substitua pelo nome do seu serviço de backend
